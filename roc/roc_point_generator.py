@@ -53,7 +53,7 @@ def roc_area(example_set, p, n):
         else:
             fp += 1
         i += 1
-    a += trapezoid_area(n, fp_prev, n, tp_prev)  # Nicht sicher ob das stimmt oder ob da mal p statt n stehn müsste
+    a += trapezoid_area(n, fp_prev, n, tp_prev)  # Vllt müsste das zweite n ein p sein!
     return a / (p * n)
 
 
@@ -61,6 +61,7 @@ def roc_area(example_set, p, n):
 test_set = [(0.84, True), (0.71, True), (0.92, True), (0.39, True), (0.44, True), (0.79, False), (0.28, False),
             (0.11, False), (0.52, False), (0.31, False), (0.49, False), (0.42, False)]
 roc_points = generate_roc(test_set, 5, 7)
+print(roc_points)
 # Schön formatieren, damit man's in R reinkopieren kann zum Plotten
 print("x=c(" + ",".join(map(str, [x for (x, y) in roc_points])) + ")")  # x-Werte
 print("y=c(" + ",".join(map(str, [y for (x, y) in roc_points])) + ")")  # y-Werte
