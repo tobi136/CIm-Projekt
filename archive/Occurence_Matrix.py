@@ -4,7 +4,7 @@ import argparse
 
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(description="Random Epitope Binding Predictor")
+    parser = argparse.ArgumentParser(description="Occurence Matrix Generator")
 
     parser.add_argument('input', metavar='input file')
 
